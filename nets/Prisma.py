@@ -92,34 +92,13 @@ def PrismaNet(input_shape=(224,224,3), n_classes=1, feather=True):
     up4 = _conv_bn(up4, 8, (3,3), 1)
     up4 = _residual_block(up4, 8, (3,3), 1, 3)
 
-    if feather:
-        up4 = Conv2D(2*n_classes, (1,1), padding='same', name='softmax_conv')(up4)
-    else:
-        up4 = Conv2D(n_classes, (1,1), padding='same', name='softmax_conv')(up4)
+    up4 = Conv2D(n_classes, (1,1), padding='same', name='softmax_conv')(up4)
     output = up4 
     
-    # feather  block
-    if feather:
-        f, b = Lambda(lambda x: x[:,:,:,0:1])(up4), Lambda(lambda x: x[:,:,:,1:2])(up4)
-        x_square = Lambda(lambda x: x*x)(inputs)
-        f3 = Concatenate()([f,f,f])
-            
-        x_masked = Multiply()([inputs, f3])
-        inputs2 = Concatenate()([inputs, up4, x_masked, x_square])
-                        
-        c1= _conv_bn(inputs2, 32, 3, 1)
-        c2 = Conv2D(3, 3, padding='same', strides=1)(c1)
-                                    
-        w1, w2, b = Lambda(lambda x: x[:,:,:,0:1])(c2), Lambda(lambda x: x[:,:,:,1:2])(c2), Lambda(lambda x: x[:,:,:,2:3])(c2)
-        output = Add()([Multiply()([w1, f]), Multiply()([w2, f])])
-        output = Add()([output, b])
-    
-    if n_classes == 1:
-        output = Activation('sigmoid')(output)
-    else:
-        output = Activation('softmax')(output)
+    output = Activation('sigmoid')(output)
 
     model = Model(inputs, output)
+    
     return model
 
 if __name__ == "__main__":
