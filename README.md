@@ -19,7 +19,7 @@ Implement some light weight hair segmentation network with keras which can be us
 
 # Results
 ## PrismaNet
-![4.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/PrismaNet/0.jpg)
+![4.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/PrismaNet/4.jpg)
 
 ## FastDeepMatting
 ## PrismaNet + FastDeepMatting
