@@ -9,6 +9,7 @@ Implement some light weight hair segmentation network with keras which can be us
 # Model
 1. [DeeplabV3plus]()
 2. [PrismaNet](https://blog.prismalabs.ai/real-time-portrait-segmentation-on-smartphones-39c84f1b9e66): network architecture as described in the Prisma-AI blog
+![a.jpg](https://cdn-images-1.medium.com/max/2400/1*y0S1deISIdDnbDhpqD4h4g.png)
 3. [FastDeepMatting](https://arxiv.org/abs/1707.08289) 
 
 # Training
