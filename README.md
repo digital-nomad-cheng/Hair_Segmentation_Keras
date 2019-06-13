@@ -4,7 +4,7 @@ Implement some light weight hair segmentation network with keras which can be us
 # Dataset
 1. [CelebA Face/Hair segmentation database](http://www.cs.ubbcluj.ro/~dadi/face-hair-segm-database.html)
 2. [Figaro](http://www.eecs.qmul.ac.uk/~urm30/Figaro.html)
-3. [LFw Part Labels](http://vis-www.cs.umass.edu/lfw/part_labels/)
+3. [LFW Part Labels](http://vis-www.cs.umass.edu/lfw/part_labels/)
 
 # Model
 1. [DeeplabV3plus]()
