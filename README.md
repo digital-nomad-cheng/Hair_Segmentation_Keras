@@ -11,6 +11,8 @@ Implement some light weight hair segmentation network with keras which can be us
 2. [PrismaNet](https://blog.prismalabs.ai/real-time-portrait-segmentation-on-smartphones-39c84f1b9e66): network architecture as described in the Prisma-AI blog
 ![a.jpg](https://cdn-images-1.medium.com/max/2400/1*y0S1deISIdDnbDhpqD4h4g.png)
 3. [FastDeepMatting](https://arxiv.org/abs/1707.08289) 
+![1.png](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/assets/1.png)
+![2.png](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/assets/2.png)
 4. PrismaNet + FastDeepMatting: base PrismaNet architecture plus the feathering block in fast deep matting
 
 # Training
@@ -18,8 +20,6 @@ Implement some light weight hair segmentation network with keras which can be us
 # Results
 ## PrismaNet
 ![0.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/0.jpg)
-![1.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/1.jpg)
-![2.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/2.jpg)
 ## FastDeepMatting
 ## PrismaNet + FastDeepMatting
 
