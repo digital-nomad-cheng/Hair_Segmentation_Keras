@@ -15,6 +15,11 @@ Implement some light weight hair segmentation network with keras which can be us
 # Training
 
 # Results
+![0.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/0.jpg)
+![1.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/1.jpg)
+![2.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/2.jpg)
+
+
 
 # Todo
 
