@@ -7,6 +7,8 @@
    docker run -it -p 8501:8501 -v "$(pwd)/serving/hair_seg/:/models/hair_seg" -e MODEL_NAME=hair_seg tensorflow/serving
    ```
 5. Get prediction results using client program. I have provided a client script you can use [client.py](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/serving/client.py).
-
 ![result.png](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/serving/serving_result.png)
 
+
+## Reference
+1. https://www.tensorflow.org/tfx/serving/serving_basic
