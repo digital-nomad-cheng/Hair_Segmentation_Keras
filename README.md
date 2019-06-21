@@ -34,5 +34,5 @@ Implement some light weight hair segmentation network with keras which can be us
 
 - [ ] port to iOS using CoreML
 - [ ] port to iOS using ncnn
-- [-] tutorial about how to serve the model using tensorflow serving and use the results for hair color prediction
+- [x] tutorial about how to serve the model using tensorflow serving and use the results for hair color prediction
 - [ ] update to TensorFlow2.0 Keras API
