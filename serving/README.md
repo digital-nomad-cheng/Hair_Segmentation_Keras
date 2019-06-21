@@ -8,5 +8,5 @@
    ```
 5. Get prediction results using client program. I have provided a client script you can use [client.py](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/serving/client.py).
 
-
+![result.png](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/serving/serving_result.png)
 
