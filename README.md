@@ -27,12 +27,12 @@ Implement some light weight hair segmentation network with keras which can be us
 ![4.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/PrismaMattingNet/4.jpg)
 
 # Serving
+I have also use this model to predict hair color with tensorflow serving. Follow instructions bellow.
 1. Use this scripts to ```python serving/keras_to_serving.py``` generate model used for tensorflow serving deployment.
 2. Prepare tensorflow serving environments. Please refer to [README.md](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/serving/README.md)
 
 # Todo
 
 - [ ] port to iOS using CoreML
-- [ ] port to iOS using ncnn
 - [x] tutorial about how to serve the model using tensorflow serving and use the results for hair color prediction
 - [ ] update to TensorFlow2.0 Keras API
