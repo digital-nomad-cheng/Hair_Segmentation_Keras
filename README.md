@@ -33,6 +33,6 @@ I have also use this model to predict hair color with tensorflow serving. Follow
 
 # Todo
 
-- [ ] port to iOS using CoreML
+- [x] port to iOS using CoreML [Hair_Segmentation_iOS](https://github.com/ItchyHiker/Hair_Segmentation_iOS)
 - [x] tutorial about how to serve the model using tensorflow serving and use the results for hair color prediction
 - [ ] update to TensorFlow2.0 Keras API
