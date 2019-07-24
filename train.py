@@ -14,6 +14,7 @@ from utils.loss import dice_coef_loss, dice_coef, recall, precision
 from nets.DeeplabV3plus import DeeplabV3plus
 from nets.FastDeepMatting import FastDeepMatting
 from nets.Prisma import PrismaNet
+from nets.PrismaMattingNet import PrismaMattingNet
 
 def train(data_path, model_name, input_shape, pretrained_weights_path, epochs, batch_size):
 
@@ -30,11 +31,13 @@ def train(data_path, model_name, input_shape, pretrained_weights_path, epochs, b
     
     # load model and weights
     if model_name == 'DeeplabV3plus':
-        model = DeeplabV3plus(input_shape=input_shape, classes=2, alpha=1)
+        model = DeeplabV3plus(input_shape=input_shape, classes=1, alpha=1)
     if model_name == "PrismaNet":
-        model = PrismaNet(input_shape=input_shape, n_classes=1, feather=False) 
+        model = PrismaNet(input_shape=input_shape, n_classes=1) 
     if model_name == "FastDeepMatting":
-        model = FastDeepMatting(input_shape=(128, 128, 3), n_classes=1) 
+        model = FastDeepMatting(input_shape=(256, 256, 3), n_classes=1) 
+    if model_name == "PrismaMattingNet":
+        model = PrismaMattingNet(input_shape=(256, 256, 3), n_classes=1)
     if pretrained_weights_path is not None:    
         model.load_weights(os.path.expanduser(pretrained_weights_path), by_name=True)
     model.summary()
@@ -76,7 +79,7 @@ def train(data_path, model_name, input_shape, pretrained_weights_path, epochs, b
         callbacks = [tensorboard, learning_rate, checkpoint],
     )
     
-    trained_model_path = 'models/CelebA_{{0}_{1}_hair_seg_model.h5'.format(model_name, input_shape[0])
+    trained_model_path = 'models/CelebA_{0}_{1}_hair_seg_model.h5'.format(model_name, input_shape[0])
     model.save(trained_model_path)
 
 
@@ -85,25 +88,25 @@ if __name__ == '__main__':
     parser.add_argument(
         '--data_path',
         type=str,
-        default='/home/ubuntu/dataset/Hair/CelebA',
+        default='/home/ubuntu/dataset/skin',
         help='dataset path, which includes ./train and ./val to suit flow_from_directory function'
     )
     parser.add_argument(
         '--model_name',
         type=str,
-        default='PrismaNet',
+        default='DeeplabV3plus',
         help='which segmentation network to use'
     )
     parser.add_argument(
         '--input_shape',
         type=tuple,
-        default=(256, 256, 3),
+        default=(224, 224, 3),
         help='input image shape',
     )
     parser.add_argument(
         '--pretrained_weights_path',
         type=str,
-        default=None,
+        # default='checkpoints/checkpoint_weights.138--0.91.h5',
         # default='models/deeplabv3_mobilenetv2_tf_dim_ordering_tf_kernels.h5',
         help='weights from pretrained model'
     )

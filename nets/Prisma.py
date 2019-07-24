@@ -54,8 +54,8 @@ def _deconv_block(inputs, filters, kernel, strides):
     x = ReLU(max_value=6)(x)
     return x
 
-def PrismaNet(input_shape=(224,224,3), n_classes=1, feather=True):
-    inputs = Input(shape=input_shape)
+def PrismaNet(input_shape=(224,224,3), n_classes=1):
+    inputs = Input(shape=input_shape, name='input')
     x = _conv_bn(inputs, 16, (3,3), 1)
     x = _residual_block(x, 16, (3,3), 1, 1) 
     
@@ -95,13 +95,13 @@ def PrismaNet(input_shape=(224,224,3), n_classes=1, feather=True):
     up4 = Conv2D(n_classes, (1,1), padding='same', name='softmax_conv')(up4)
     output = up4 
     
-    output = Activation('sigmoid')(output)
+    output = Activation('sigmoid', name='output')(output)
 
     model = Model(inputs, output)
     
     return model
 
 if __name__ == "__main__":
-    model = PrismaNet((256, 256, 3), feather=False)
+    model = PrismaNet((256, 256, 3))
     model.summary()
 

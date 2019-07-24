@@ -47,7 +47,7 @@ def evaluate(model_path, imgs_path, input_shape):
 def main():
     
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_path", default='./models/PrismaNet_CelebA_256.h5')
+    parser.add_argument("--model_path", default='./models/CelebA_DeeplabV3plus_256_hair_seg_model.h5')
     parser.add_argument('--imgs_path', default='./imgs/test')
     parser.add_argument('--input_shape', default=[256,256])
     args = parser.parse_args()
