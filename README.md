@@ -19,9 +19,9 @@ Implement some light weight hair segmentation network with keras which can be us
 
 # Results
 ## DeeplabV3plus
-![4.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/DeeplabV3plus/4.jpg)
+![4.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/DeeplabV3plus/1803151818-00000296.jpg)
 ## PrismaNet
-![4.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/PrismaNet/4.jpg)
+![4.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/PrismaNet/1803151818-00000296.jpg)
 ## FastDeepMatting
 ## PrismaNet + FastDeepMatting
 ![4.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/PrismaMattingNet/4.jpg)
