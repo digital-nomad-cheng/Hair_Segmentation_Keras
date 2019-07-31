@@ -443,7 +443,6 @@ def DeeplabV3plus(weights='pascal_voc', input_tensor=None, input_shape=(512, 512
         x = BatchNormalization(
         epsilon=1e-3, momentum=0.999, name='Conv_BN')(x)
         x = Activation(relu6, name='Conv_Relu6')(x)
-
         x = _inverted_res_block(x, filters=16, alpha=alpha, stride=1,
                         expansion=1, block_id=0, skip_connection=False)
 
@@ -497,8 +496,8 @@ def DeeplabV3plus(weights='pascal_voc', input_tensor=None, input_shape=(512, 512
                 use_bias=False, name='image_pooling')(b4)
     b4 = BatchNormalization(name='image_pooling_BN', epsilon=1e-5)(b4)
     b4 = Activation('relu')(b4)
-    b4 = BilinearUpsampling2D((int(np.ceil(input_shape[0] / OS)), int(np.ceil(input_shape[1] / OS))))(b4)
-    # b4 = keras.layers.UpSampling2D(size=(int(np.ceil(input_shape[0] / OS)), int(np.ceil(input_shape[1] / OS))), interpolation='bilinear')(b4)
+    # b4 = BilinearUpsampling2D((int(np.ceil(input_shape[0] / OS)), int(np.ceil(input_shape[1] / OS))))(b4)
+    b4 = keras.layers.UpSampling2D(size=(int(np.ceil(input_shape[0] / OS)), int(np.ceil(input_shape[1] / OS))), interpolation='bilinear')(b4)
     # simple 1x1
     b0 = Conv2D(256, (1, 1), padding='same', use_bias=False, name='aspp0')(x)
     b0 = BatchNormalization(name='aspp0_BN', epsilon=1e-5)(b0)
@@ -536,8 +535,8 @@ def DeeplabV3plus(weights='pascal_voc', input_tensor=None, input_shape=(512, 512
         last_layer_name = 'custom_logits_semantic1'
 
     x = Conv2D(classes, (1, 1), padding='same', name=last_layer_name)(x)
-    # x = keras.layers.UpSampling2D(size=(8, 8), interpolation='bilinear')(x)
-    x = BilinearUpsampling2D(size=(8,8))(x)
+    x = keras.layers.UpSampling2D(size=(8, 8), interpolation='bilinear')(x)
+    # x = BilinearUpsampling2D(size=(8,8))(x)
     if classes == 1: 
         x = Activation('sigmoid')(x)
     else:
