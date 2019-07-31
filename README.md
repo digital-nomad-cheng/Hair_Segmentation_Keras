@@ -23,8 +23,11 @@ Implement some light weight hair segmentation network with keras which can be us
 ## PrismaNet
 ![4.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/PrismaNet/1803151818-00000296.jpg)
 ## FastDeepMatting
+
 ## PrismaNet + FastDeepMatting
 ![4.jpg](https://github.com/ItchyHiker/Hair_Segmentation_Keras/blob/master/imgs/results/PrismaMattingNet/4.jpg)
+
+**Matting methods used channel split operation which is unportable to CoreML as I wrote.**
 
 # Serving
 I have also use this model to predict hair color with tensorflow serving. Follow instructions bellow.
