@@ -1,4 +1,5 @@
-!! update ported some of the network to pytorch for it's easier to convert to ncnn.
+!! update ported some of the network to pytorch for it's easier to convert to ncnn. Check it here:
+[mobile phone portrait matting](https://github.com/ItchyHiker/mobile_phone_portrait_matting)
 # Hair_Segmentation_Keras
 Implement some light weight hair segmentation network with keras which can be used on mobile devices easily.
 
