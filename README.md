@@ -1,3 +1,4 @@
+!! update ported some of the network to pytorch for it's easier to convert to ncnn.
 # Hair_Segmentation_Keras
 Implement some light weight hair segmentation network with keras which can be used on mobile devices easily.
 
